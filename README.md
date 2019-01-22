@@ -35,13 +35,13 @@ Gemfile.lock
 
 <strong>lib</strong> - lib folder
 
-	<strong>app</strong> - all apps
+	app folder - all apps
 	
 		- save_file.rb :  SaveFile class saving your output in csv, json and Google Sheet
 		
 		- val_doise_townhalls_scrapper.rb : ValdOiseScrapper class scrapping the annuaires-des-mairies.com website
 		
-	<strong>views</strong> - All Front-End executions (printing on terminal)
+	views folder - All Front-End executions (printing on terminal)
 	
 		- choose_url.rb: ChooseUrl class printing an intro and a menu at the beginning of the programme
 		
