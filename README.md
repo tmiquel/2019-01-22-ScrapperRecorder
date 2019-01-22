@@ -1,50 +1,60 @@
 README
 ======
 
-TEMPLATE README
-THP Marseille - Fichier de rendu pour le 2019/01/17
+THP Marseille - Fichier de rendu pour le 2019/01/22
 
-Comment exécuter le programme
-=============
+# Val d'Oise Scrapper (outputs in csv, json, Google Sheet)
 
-1. Créer un dossier
-2. git clone https://github.com/tmiquel/THP-2019-01-10-RubyBasics
-3. Se mettre à la racine du dossier
-4. Jouer les tests suivants :
+Ce programme scrappe sur http://annuaire-des-mairies.com/val-d-oise.html les emails des mairies du Val d'Oise et retourne (choix de l'utilisateur) ces emails dans des fichiers JSON, CSV et/ou Google. Les fichiers JSON et CSV sont accessibles dans le dossier db.
 
-	rspec spec/crypto_currencies_spec.rb 
+## Getting Started
 
-	rspec spec/townhall_spec.rb 
+1. Clone or Download this folder
+2. Optional - if you would like a Google Sheet output, set a config.json file in the root folder (instructions <a href="https://github.com/gimite/google-drive-ruby/blob/master/doc/authorization.md">here</a>)
+3. Run "ruby app.rb"
 
-	rspec spec/members_FR_parliament_spec.rb
+## Running the tests
 
+No test.
 
-Contenu
-======
+## Folder Structure
 
-1. Un scrapping de crypto_currencies
+app.rb - main file. Entry point for this programme. Initialise a new instance of the ValdOiseScrapper.
 
-	ruby lib/crypto_currencies_scrapper.rb 
+config.json - login for Google Sheet. <em>To be added by each user</em>
 
-2. Un scrapping des emails des mairies du Val d'Oise
+Gemfile : environment required (gems and ruby version)
+Gemfile.lock
 
-	ruby lib/oise_townhall_scrapper.rb
+<strong>db</strong> - database folder
+	- emails.json: output file in json
+	- emails.csv : output file in csv
 
-3. Un scrapping des emails des députés français
+<strong>lib</strong> - lib folder
+	<strong>app</strong> - all apps
+		- save_file.rb :  SaveFile class saving your output in csv, json and Google Sheet
+		- val_doise_townhalls_scrapper.rb : ValdOiseScrapper class scrapping the annuaires-des-mairies.com website
+	<strong>views</strong> - All Front-End executions (printing on terminal)
+		- choose_url.rb: ChooseUrl class printing an intro and a menu at the beginning of the programme
+		- done.rb : Done class printing an outro and a menu to select which output file format you would like to choose
 
-	ruby lib/members_FR_parliament_scrapper.rb
-	
+<strong>spec</strong> - Test folder. Empty.
 
-Participants 
-==========
+## Versioning
+
+No versioning 
+
+## Authors
+
+* **Thibaut Miquel** - *06 99 33 28 11* - Thibaut Miquel on Slack
+
+## License
+
+No license.
+
+## Acknowledgments
 
 Note : on a travaillé ensemble, mais chacun a customizé son code.
 Ce rendu est le rendu de l'un d'entre nous.
 
-"Prénom - Nom - Pseudo Slack - Pseudo Github":
---------------------------------------------
-
-Patrick - Aubert - Patrickl - patrickaub  
-
-Thibaut - Miquel - Thibaut Miquel - tmiquel - 06 99 33 28 11
 
